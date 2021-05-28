@@ -10,10 +10,18 @@ class Game {
     } else {
       this.currentScore += n;
     }
-    if (n === 10) this.numberOfRollsWithBonus = 2;
-    else if(n+this.previousRollScore === 10) this.numberOfRollsWithBonus = 1;
+    if (this.isRollAStrike(n)) this.numberOfRollsWithBonus = 2;
+    else if(this.areRollsASpare(n)) this.numberOfRollsWithBonus = 1;
     else this.numberOfRollsWithBonus--;
     this.previousRollScore = n;
+  }
+
+  isRollAStrike(n) {
+    return n === 10;
+  }
+
+  areRollsASpare(n) {
+    return n + this.previousRollScore === 10;
   }
 
   score() {
