@@ -1,5 +1,13 @@
-const renameMe = () => {
-    return true;
-};
+class Game {
+  constructor() {}
 
-module.exports = {renameMe};
+  roll(n) {
+    this.currentScore = 1;
+  }
+
+  score() {
+    return this.currentScore;
+  }
+}
+
+module.exports = { Game };

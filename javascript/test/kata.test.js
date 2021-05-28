@@ -1,8 +1,9 @@
-const { renameMe } = require('../src/kata');
+const { Game } = require("../src/kata");
 
-describe("Kata", function () {
-  it("change_this_name", function () {
-   var result = renameMe();
-      expect(result).toBe(true);
+describe("Test for Game", function () {
+  it("If you strike one bawl the roll score is one", function () {
+    const game = new Game();
+    game.roll(1);
+    expect(game.score()).toBe(1);
   });
 });
