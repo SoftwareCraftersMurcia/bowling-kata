@@ -2,7 +2,7 @@ class Game {
   constructor() {}
 
   roll(n) {
-    this.currentScore = 1;
+    this.currentScore = n;
   }
 
   score() {
