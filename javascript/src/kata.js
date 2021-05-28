@@ -11,7 +11,9 @@ class Game {
       this.currentScore += n;
     }
     if (n === 10) this.numberOfRollsWithBonus = 2;
+    else if(n+this.previousRollScore === 10) this.numberOfRollsWithBonus = 1;
     else this.numberOfRollsWithBonus--;
+    this.previousRollScore = n;
   }
 
   score() {
