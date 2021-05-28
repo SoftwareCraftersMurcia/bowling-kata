@@ -1,8 +1,10 @@
 class Game {
-  constructor() {}
+  constructor() {
+    this.currentScore = 0;
+  }
 
   roll(n) {
-    this.currentScore = n;
+    this.currentScore += n;
   }
 
   score() {
