@@ -66,9 +66,15 @@ describe('Test for Game', () => {
       game.roll(5);
     });
 
-    it('next roll should score double', () => {
+    it('next roll should score double in next roll', () => {
       game.roll(1);
       expect(game.score()).toBe(12);
+    });
+
+    it('next roll should score double only in next roll', () => {
+      game.roll(1);
+      game.roll(1);
+      expect(game.score()).toBe(13);
     });
   });
 
