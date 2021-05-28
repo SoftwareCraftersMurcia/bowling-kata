@@ -30,4 +30,15 @@ describe('Test for Game', () => {
     });
   });
 
+  describe('after strike',  () => {
+    beforeEach( () => {
+      game.roll(10);
+    });
+    it('next roll should score double',  () => {
+      game.roll(1);
+
+      expect(game.score()).toBe(12)
+    });
+  });
+
 });
