@@ -6,9 +6,9 @@ class Game {
   roll(n) {
     if(this.currentScore === 10) {
       this.currentScore += 2*n;
-      return;
+    } else {
+      this.currentScore += n;
     }
-    this.currentScore += n;
   }
 
   score() {
