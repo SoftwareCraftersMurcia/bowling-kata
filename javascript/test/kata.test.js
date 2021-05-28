@@ -28,7 +28,7 @@ describe("Test for Game", () => {
       expect(game.score()).toBe(2);
     });
 
-    it("should sum up both rolls", () => {
+    it("should sum up all rolls", () => {
       game.roll(3);
       game.roll(3);
       game.roll(4);
@@ -41,10 +41,23 @@ describe("Test for Game", () => {
     beforeEach(() => {
       game.roll(10);
     });
+
     it("next roll should score double", () => {
       game.roll(1);
-
       expect(game.score()).toBe(12);
+    });
+
+    it("next two rolls should score double", () => {
+      game.roll(1);
+      game.roll(1);
+      expect(game.score()).toBe(14);
+    });
+
+    it("the third roll should score as normal", () => {
+      game.roll(1);
+      game.roll(1);
+      game.roll(1);
+      expect(game.score()).toBe(15);
     });
   });
 });
